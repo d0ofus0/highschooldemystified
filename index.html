@@ -26,6 +26,87 @@
           --pillar-bg: #1e1e1e;
           --accent-color: #0d6efd;
       }
+          /* Roman Pillar Button Style */
+    .pillar-btn {
+        /* Basic button setup */
+        padding: 1.5rem 3rem;
+        margin: 1rem;
+        border: none;
+        cursor: pointer;
+        
+        /* Pillar styling */
+        background: linear-gradient(
+            to right,
+            #e6d8c8 0%,       /* Light stone color */
+            #e6d8c8 8%,
+            #d3c4b3 8%,       /* Groove shadow */
+            #d3c4b3 12%,
+            #e6d8c8 12%,
+            /* Repeat pattern */
+            #e6d8c8 20%,
+            #d3c4b3 20%,
+            #d3c4b3 24%,
+            #e6d8c8 24%,
+            #e6d8c8 32%,
+            #d3c4b3 32%,
+            #d3c4b3 36%,
+            #e6d8c8 36%
+        );
+        border-radius: 4px;
+        position: relative;
+        box-shadow: 
+            0 4px 12px rgba(0,0,0,0.2),
+            inset 0 2px 4px rgba(255,255,255,0.3);
+        
+        /* Text styling */
+        color: #4a4135;
+        font-family: 'Times New Roman', serif;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        
+        /* 3D effect */
+        transform: perspective(400px) rotateX(15deg);
+        transition: all 0.3s ease;
+    }
+
+    /* Add decorative top and bottom */
+    .pillar-btn::before,
+    .pillar-btn::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 12px;
+        background: #b8a995;
+    }
+
+    .pillar-btn::before {
+        top: 0;
+        border-bottom: 2px solid #9c8e7d;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .pillar-btn::after {
+        bottom: 0;
+        border-top: 2px solid #9c8e7d;
+        border-radius: 0 0 4px 4px;
+    }
+
+    /* Hover effects */
+    .pillar-btn:hover {
+        transform: perspective(400px) rotateX(10deg) translateY(-2px);
+        box-shadow: 
+            0 6px 16px rgba(0,0,0,0.3),
+            inset 0 2px 4px rgba(255,255,255,0.4);
+    }
+
+    .pillar-btn:active {
+        transform: perspective(400px) rotateX(15deg) translateY(1px);
+        box-shadow: 
+            0 2px 6px rgba(0,0,0,0.2),
+            inset 0 2px 4px rgba(0,0,0,0.2);
+    }
       body {
           font-family: 'Inter', sans-serif;
           background-color: var(--background-color);
@@ -121,6 +202,10 @@
             </div>
         </div>
     </div>
+
+    <!-- Example Usage -->
+<button class="pillar-btn">SPQR</button>
+<button class="pillar-btn">VENI VIDI VICI</button>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
