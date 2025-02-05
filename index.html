@@ -36,14 +36,14 @@
       }
       .pillar-container {
           display: flex;
-          justify-content: center;
+          justify-content: space-around;
           align-items: flex-end;
           margin-top: 50px;
           padding: 50px 0;
-          gap: 20px;
+          gap: 50px;
       }
       .pillar {
-          width: 120px;
+          width: 150px;
           background: linear-gradient(to right, #e6d8c8 5%, #d3c4b3 10%, #e6d8c8 15%, #d3c4b3 20%, #e6d8c8 25%, #d3c4b3 30%, #e6d8c8 35%, #d3c4b3 40%, #e6d8c8 45%, #d3c4b3 50%, #e6d8c8 55%, #d3c4b3 60%, #e6d8c8 65%, #d3c4b3 70%, #e6d8c8 75%, #d3c4b3 80%, #e6d8c8 85%, #d3c4b3 90%, #e6d8c8 95%);
           border-radius: 5px;
           position: relative;
@@ -62,40 +62,40 @@
       .pillar::before {
           content: '';
           position: absolute;
-          top: -40px;
-          left: -15px;
-          right: -15px;
-          height: 80px;
+          top: -50px;
+          left: -20px;
+          right: -20px;
+          height: 100px;
           background: var(--pillar-bg);
-          border-radius: 30px 30px 0 0;
+          border-radius: 40px 40px 0 0;
           border: 3px solid var(--border-color);
           box-shadow: 0 -4px 15px rgba(0,0,0,0.3), inset 0 -10px 20px rgba(0,0,0,0.1);
       }
       .pillar .pillar-label {
           position: absolute;
-          top: -30px;
+          top: -40px;
           left: 50%;
           transform: translateX(-50%);
           font-family: 'Times New Roman', serif;
           font-weight: bold;
-          font-size: 1.8rem;
+          font-size: 2rem;
           color: var(--text-color);
       }
       .pillar::after {
           content: '';
           position: absolute;
-          bottom: -40px;
-          left: -15px;
-          right: -15px;
-          height: 60px;
+          bottom: -50px;
+          left: -20px;
+          right: -20px;
+          height: 80px;
           background: var(--pillar-bg);
-          border-radius: 0 0 30px 30px;
+          border-radius: 0 0 40px 40px;
           border-top: 4px solid var(--border-color);
           box-shadow: 0 10px 25px rgba(0,0,0,0.4), inset 0 10px 20px rgba(255,255,255,0.1);
       }
-      .pillar:nth-child(1), .pillar:nth-child(5) { height: 300px; }
-      .pillar:nth-child(2), .pillar:nth-child(4) { height: 350px; }
-      .pillar:nth-child(3) { height: 400px; }
+      .pillar:nth-child(1), .pillar:nth-child(5) { height: 400px; }
+      .pillar:nth-child(2), .pillar:nth-child(4) { height: 450px; }
+      .pillar:nth-child(3) { height: 500px; }
     </style>
 </head>
 <body>
