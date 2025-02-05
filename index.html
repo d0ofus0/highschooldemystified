@@ -1,10 +1,3 @@
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap Icons (Optional) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-<!-- Google Font for Modern Look -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,91 +15,11 @@
     <style>
       :root {
           --background-color: #121212;
-          --text-color: #e0e0e0;
-          --pillar-bg: #1e1e1e;
+          --text-color: #3d2b1f;
+          --pillar-bg: #d4c2aa;
           --accent-color: #0d6efd;
+          --border-color: #a89885;
       }
-          /* Roman Pillar Button Style */
-    .pillar-btn {
-        /* Basic button setup */
-        padding: 1.5rem 3rem;
-        margin: 1rem;
-        border: none;
-        cursor: pointer;
-        
-        /* Pillar styling */
-        background: linear-gradient(
-            to right,
-            #e6d8c8 0%,       /* Light stone color */
-            #e6d8c8 8%,
-            #d3c4b3 8%,       /* Groove shadow */
-            #d3c4b3 12%,
-            #e6d8c8 12%,
-            /* Repeat pattern */
-            #e6d8c8 20%,
-            #d3c4b3 20%,
-            #d3c4b3 24%,
-            #e6d8c8 24%,
-            #e6d8c8 32%,
-            #d3c4b3 32%,
-            #d3c4b3 36%,
-            #e6d8c8 36%
-        );
-        border-radius: 4px;
-        position: relative;
-        box-shadow: 
-            0 4px 12px rgba(0,0,0,0.2),
-            inset 0 2px 4px rgba(255,255,255,0.3);
-        
-        /* Text styling */
-        color: #4a4135;
-        font-family: 'Times New Roman', serif;
-        font-weight: bold;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        
-        /* 3D effect */
-        transform: perspective(400px) rotateX(15deg);
-        transition: all 0.3s ease;
-    }
-
-    /* Add decorative top and bottom */
-    .pillar-btn::before,
-    .pillar-btn::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 12px;
-        background: #b8a995;
-    }
-
-    .pillar-btn::before {
-        top: 0;
-        border-bottom: 2px solid #9c8e7d;
-        border-radius: 4px 4px 0 0;
-    }
-
-    .pillar-btn::after {
-        bottom: 0;
-        border-top: 2px solid #9c8e7d;
-        border-radius: 0 0 4px 4px;
-    }
-
-    /* Hover effects */
-    .pillar-btn:hover {
-        transform: perspective(400px) rotateX(10deg) translateY(-2px);
-        box-shadow: 
-            0 6px 16px rgba(0,0,0,0.3),
-            inset 0 2px 4px rgba(255,255,255,0.4);
-    }
-
-    .pillar-btn:active {
-        transform: perspective(400px) rotateX(15deg) translateY(1px);
-        box-shadow: 
-            0 2px 6px rgba(0,0,0,0.2),
-            inset 0 2px 4px rgba(0,0,0,0.2);
-    }
       body {
           font-family: 'Inter', sans-serif;
           background-color: var(--background-color);
@@ -123,29 +36,66 @@
       }
       .pillar-container {
           display: flex;
-          justify-content: space-around;
-          align-items: center;
+          justify-content: center;
+          align-items: flex-end;
           margin-top: 50px;
+          padding: 50px 0;
+          gap: 20px;
       }
       .pillar {
-          width: 15%;
-          height: 400px;
-          background-color: var(--pillar-bg);
-          color: var(--text-color);
-          border-radius: 10px;
-          padding: 20px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          width: 120px;
+          background: linear-gradient(to right, #e6d8c8 5%, #d3c4b3 10%, #e6d8c8 15%, #d3c4b3 20%, #e6d8c8 25%, #d3c4b3 30%, #e6d8c8 35%, #d3c4b3 40%, #e6d8c8 45%, #d3c4b3 50%, #e6d8c8 55%, #d3c4b3 60%, #e6d8c8 65%, #d3c4b3 70%, #e6d8c8 75%, #d3c4b3 80%, #e6d8c8 85%, #d3c4b3 90%, #e6d8c8 95%);
+          border-radius: 5px;
+          position: relative;
           text-align: center;
-          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          color: var(--text-color);
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
           cursor: pointer;
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       }
       .pillar:hover {
           transform: scale(1.1);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 15px 40px rgba(0,0,0,0.5);
       }
+      .pillar::before {
+          content: '';
+          position: absolute;
+          top: -40px;
+          left: -15px;
+          right: -15px;
+          height: 80px;
+          background: var(--pillar-bg);
+          border-radius: 30px 30px 0 0;
+          border: 3px solid var(--border-color);
+          box-shadow: 0 -4px 15px rgba(0,0,0,0.3), inset 0 -10px 20px rgba(0,0,0,0.1);
+      }
+      .pillar .pillar-label {
+          position: absolute;
+          top: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-family: 'Times New Roman', serif;
+          font-weight: bold;
+          font-size: 1.8rem;
+          color: var(--text-color);
+      }
+      .pillar::after {
+          content: '';
+          position: absolute;
+          bottom: -40px;
+          left: -15px;
+          right: -15px;
+          height: 60px;
+          background: var(--pillar-bg);
+          border-radius: 0 0 30px 30px;
+          border-top: 4px solid var(--border-color);
+          box-shadow: 0 10px 25px rgba(0,0,0,0.4), inset 0 10px 20px rgba(255,255,255,0.1);
+      }
+      .pillar:nth-child(1), .pillar:nth-child(5) { height: 300px; }
+      .pillar:nth-child(2), .pillar:nth-child(4) { height: 350px; }
+      .pillar:nth-child(3) { height: 400px; }
     </style>
 </head>
 <body>
@@ -154,17 +104,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">High School Demystified</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">College Prep</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
-            </div>
         </div>
     </nav>
 
@@ -173,39 +112,19 @@
         <div class="hero">
             <h1>Maximize Your High School Journey</h1>
             <p class="lead">Your one-stop hub for academic success, college prep, and extracurricular excellence.</p>
-            <a href="#" class="btn btn-primary btn-lg">Get Started</a>
         </div>
     </div>
 
     <!-- Pillar Sections -->
     <div class="container">
         <div class="pillar-container">
-            <div class="pillar" onclick="location.href='#';">
-                <h5>School Strategies</h5>
-                <p>Tips, tools, and techniques to navigate your in-school life. How to get a 4.0 efficiently and save time + energy.</p>
-            </div>
-            <div class="pillar" onclick="location.href='#';">
-                <h5>Extracurriculars</h5>
-                <p>Explore ways to build a strong resume with activities you love.</p>
-            </div>
-            <div class="pillar" onclick="location.href='#';">
-                <h5>College Applications</h5>
-                <p>Step-by-step guides to crafting a standout college application.</p>
-            </div>
-            <div class="pillar" onclick="location.href='#';">
-                <h5>Research Opportunities</h5>
-                <p>Top summer programs, internship opportunities, and tips on how to find mentored research as a high schooler.</p>
-            </div>
-            <div class="pillar" onclick="location.href='#';">
-                <h5>Testimonials</h5>
-                <p>Real statements made by real students. Find out why our services are top-notch and how they'll help you.</p>
-            </div>
+            <div class="pillar" onclick="location.href='#';"><span class="pillar-label">School Strategies</span></div>
+            <div class="pillar" onclick="location.href='#';"><span class="pillar-label">Extracurriculars</span></div>
+            <div class="pillar" onclick="location.href='#';"><span class="pillar-label">College Applications</span></div>
+            <div class="pillar" onclick="location.href='#';"><span class="pillar-label">Research Opportunities</span></div>
+            <div class="pillar" onclick="location.href='#';"><span class="pillar-label">Testimonials</span></div>
         </div>
     </div>
-
-    <!-- Example Usage -->
-<button class="pillar-btn">SPQR</button>
-<button class="pillar-btn">VENI VIDI VICI</button>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
