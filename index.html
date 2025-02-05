@@ -4,129 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High School Demystified</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons (Optional) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
     <style>
-      :root {
-          --background-color: #121212;
-          --text-color: #3d2b1f;
-          --pillar-bg: #d4c2aa;
-          --accent-color: #0d6efd;
-          --border-color: #a89885;
-      }
-      body {
-          font-family: 'Inter', sans-serif;
-          background-color: var(--background-color);
-          color: var(--text-color);
-          text-align: center;
-      }
-      .hero {
-          background: linear-gradient(135deg, #212121, #343a40);
-          color: white;
-          text-align: center;
-          padding: 80px 20px;
-          border-radius: 12px;
-          margin-top: 20px;
-      }
-      .pillar-container {
-          display: flex;
-          justify-content: space-around;
-          align-items: flex-end;
-          margin-top: 50px;
-          padding: 50px 0;
-          gap: 50px;
-      }
-      .pillar {
-          width: 150px;
-          background: linear-gradient(to right, #e6d8c8 5%, #d3c4b3 10%, #e6d8c8 15%, #d3c4b3 20%, #e6d8c8 25%, #d3c4b3 30%, #e6d8c8 35%, #d3c4b3 40%, #e6d8c8 45%, #d3c4b3 50%, #e6d8c8 55%, #d3c4b3 60%, #e6d8c8 65%, #d3c4b3 70%, #e6d8c8 75%, #d3c4b3 80%, #e6d8c8 85%, #d3c4b3 90%, #e6d8c8 95%);
-          border-radius: 5px;
-          position: relative;
-          text-align: center;
-          color: var(--text-color);
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
-          cursor: pointer;
-          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      }
-      .pillar:hover {
-          transform: scale(1.1);
-          box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-      }
-      .pillar::before {
-          content: '';
-          position: absolute;
-          top: -50px;
-          left: -20px;
-          right: -20px;
-          height: 100px;
-          background: var(--pillar-bg);
-          border-radius: 40px 40px 0 0;
-          border: 3px solid var(--border-color);
-          box-shadow: 0 -4px 15px rgba(0,0,0,0.3), inset 0 -10px 20px rgba(0,0,0,0.1);
-      }
-      .pillar .pillar-label {
-          position: absolute;
-          top: -40px;
-          left: 50%;
-          transform: translateX(-50%);
-          font-family: 'Times New Roman', serif;
-          font-weight: bold;
-          font-size: 2rem;
-          color: var(--text-color);
-      }
-      .pillar::after {
-          content: '';
-          position: absolute;
-          bottom: -50px;
-          left: -20px;
-          right: -20px;
-          height: 80px;
-          background: var(--pillar-bg);
-          border-radius: 0 0 40px 40px;
-          border-top: 4px solid var(--border-color);
-          box-shadow: 0 10px 25px rgba(0,0,0,0.4), inset 0 10px 20px rgba(255,255,255,0.1);
-      }
-      .pillar:nth-child(1), .pillar:nth-child(5) { height: 400px; }
-      .pillar:nth-child(2), .pillar:nth-child(4) { height: 450px; }
-      .pillar:nth-child(3) { height: 500px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Navigation */
+        nav {
+            background: #0a0a0a;
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #7c8cff;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .geometric-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, 
+                    rgba(124, 140, 255, 0.1) 25%, 
+                    transparent 25%, 
+                    transparent 75%, 
+                    rgba(124, 140, 255, 0.1) 75%),
+                linear-gradient(-45deg, 
+                    rgba(124, 140, 255, 0.1) 25%, 
+                    transparent 25%, 
+                    transparent 75%, 
+                    rgba(124, 140, 255, 0.1) 75%);
+            background-size: 60px 60px;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #7c8cff, #a56cff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content {
+            animation: fadeIn 1s ease-out;
+        }
     </style>
 </head>
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">High School Demystified</a>
-        </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="container">
-        <div class="hero">
-            <h1>Maximize Your High School Journey</h1>
-            <p class="lead">Your one-stop hub for academic success, college prep, and extracurricular excellence.</p>
+    <section class="hero">
+        <div class="geometric-pattern"></div>
+        <div class="hero-content">
+            <h1>High School Demystified</h1>
+            <p class="subtitle">Enter text here</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Pillar Sections -->
-    <div class="container">
-        <div class="pillar-container">
-            <div class="pillar" onclick="location.href='#';"><span class="pillar-label">School Strategies</span></div>
-            <div class="pillar" onclick="location.href='#';"><span class="pillar-label">Extracurriculars</span></div>
-            <div class="pillar" onclick="location.href='#';"><span class="pillar-label">College Applications</span></div>
-            <div class="pillar" onclick="location.href='#';"><span class="pillar-label">Research Opportunities</span></div>
-            <div class="pillar" onclick="location.href='#';"><span class="pillar-label">Testimonials</span></div>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
