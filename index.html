@@ -168,54 +168,6 @@
             0%, 100% { bottom: 40px; }
             50% { bottom: 50px; }
         }
-
-        /* Content Section */
-        .content-section {
-            background: #000;
-            min-height: 100vh;
-            padding: 100px 5% 50px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            align-items: center;
-        }
-
-        .content-block {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .content-block:hover {
-            transform: translateY(-5px);
-        }
-
-        .image-placeholder {
-            height: 400px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        .text-box {
-            color: white;
-            line-height: 1.6;
-        }
-
-        @media (max-width: 768px) {
-            .content-section {
-                grid-template-columns: 1fr;
-                padding-top: 80px;
-            }
-
-            .image-placeholder {
-                height: 300px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -244,31 +196,7 @@
 
 
 <section id="content-section" class="content-section">
-    <!-- Image/Content Block 1 -->
-    <div class="content-block">
-        <div class="image-placeholder">
-            Your Image Here
-        </div>
-    </div>
 
-    <!-- Text Block 1 -->
-    <div class="content-block text-box">
-        <h2>Section Title</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-
-    <!-- Image/Content Block 2 -->
-    <div class="content-block">
-        <div class="image-placeholder">
-            Your Image Here
-        </div>
-    </div>
-
-    <!-- Text Block 2 -->
-    <div class="content-block text-box">
-        <h2>Section Title</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
 </section>
 
 <!-- Add this JavaScript just before closing </body> -->
@@ -325,6 +253,202 @@
         if (window.scrollY === 0) {
             scrollArrow.classList.remove('hidden');
         }
+    });
+</script>
+
+<style>
+    /* Updated Selector Bar */
+    .selector-bar {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+        margin: 0 auto 40px;
+        max-width: 1000px;
+        display: flex;
+        padding: 4px;
+        backdrop-filter: blur(8px);
+    }
+
+    .selector-item {
+        flex: 1 1 0%;
+        padding: 12px 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        border-radius: 6px;
+        margin: 0 2px;
+    }
+
+    .selector-item:hover {
+        background: rgba(147, 51, 234, 0.1);
+        color: #9333ea;
+    }
+
+    .selector-item.active {
+        color: #9333ea;
+        background: rgba(147, 51, 234, 0.15);
+        position: relative;
+    }
+
+    .selector-item.active::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 24px;
+        height: 2px;
+        background: #9333ea;
+        border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+        .selector-bar {
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            padding: 0;
+        }
+        
+        .selector-item {
+            background: rgba(255, 255, 255, 0.03);
+            margin: 0;
+            border-radius: 6px;
+        }
+        
+        .selector-item.active::after {
+            display: none;
+        }
+    }
+</style>
+
+<!-- Add this inside the content-section -->
+<section id="content-section" class="content-section">
+    <!-- New Header Section -->
+    <div class="section-header">
+        <h2 class="section-title">Explore Our Features</h2>
+        <p class="section-subtitle">Discover what makes our platform unique</p>
+    </div>
+
+    <!-- Existing Selector Bar -->
+    <div class="selector-bar">
+        <div class="selector-item active" data-slide="1">hello</div>
+        <div class="selector-item" data-slide="2">hello</div>
+        <div class="selector-item" data-slide="3">hello</div>
+        <div class="selector-item" data-slide="4">hello</div>
+        <div class="selector-item" data-slide="5">hello</div>
+    </div>
+
+    <!-- Slide Container -->
+    <div class="slide-container">
+        <!-- ... existing slide content ... -->
+    </div>
+</section>
+
+<!-- Add this CSS -->
+<style>
+    .section-header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 0 20px 20px;
+        
+    }
+
+    .section-title {
+        color: #fff;
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 1.8rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<style>
+    /* Add these styles */
+    .slide-container {
+        position: relative;
+        min-height: 200px;
+        margin-top: 20px;
+    }
+
+    .content-slide {
+        position: absolute;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+        padding: 30px;
+        color: white;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+    }
+    .content-section {
+    padding: 150px 5% 50px; /* Increased from 100px */
+    scroll-margin-top: 100px; /* Add this line */
+}
+
+    .content-slide.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+
+    .content-slide::before {
+        content: "Slide";
+        display: block;
+        font-size: 0.8rem;
+        color: #9333ea;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="slide-container">
+    <div class="content-slide active" id="slide-1">1</div>
+    <div class="content-slide" id="slide-2">2</div>
+    <div class="content-slide" id="slide-3">3</div>
+    <div class="content-slide" id="slide-4">4</div>
+    <div class="content-slide" id="slide-5">5</div>
+</div>
+
+<script>
+    // JavaScript to handle slide transitions
+    const selectorItems = document.querySelectorAll('.selector-item');
+    const contentSlides = document.querySelectorAll('.content-slide');
+
+    selectorItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Remove active states
+            selectorItems.forEach(i => i.classList.remove('active'));
+            contentSlides.forEach(slide => slide.classList.remove('active'));
+            
+            // Set new active states
+            item.classList.add('active');
+            const slideId = item.dataset.slide;
+            const targetSlide = document.getElementById(`slide-${slideId}`);
+            targetSlide.classList.add('active');
+        });
     });
 </script>
 
